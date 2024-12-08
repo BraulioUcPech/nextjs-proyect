@@ -31,8 +31,6 @@ export async function getStaticProps({ params }) {
     pagination: { size: page.data?.pagination?.size || 9, page: 1 },
   });
 
-  await writeFile("./public/feed.xml", generateRss(posts));
-
   return {
     props: {
       page: JSON.parse(JSON.stringify(page)),
