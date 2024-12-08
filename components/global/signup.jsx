@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
+import { useRouter } from "next/router"; // Importar useRouter
 
 export default function GlobalSignup({ block, dataBinding }) {
   const [email, setEmail] = useState("");
@@ -8,6 +9,7 @@ export default function GlobalSignup({ block, dataBinding }) {
   const [checkboxChecked, setCheckboxChecked] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const router = useRouter(); // Inicializar useRouter
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,7 +34,7 @@ export default function GlobalSignup({ block, dataBinding }) {
       }
 
       alert("Cuenta creada exitosamente");
-      // Redirigir o hacer lo que sea necesario después del registro
+      router.push("/dashboard"); // Redirigir al dashboard
     } catch (error) {
       console.error("Error al crear cuenta:", error);
       if (error.message.includes("rate limit exceeded")) {
@@ -202,7 +204,7 @@ export default function GlobalSignup({ block, dataBinding }) {
                     <svg
                       width="20"
                       height="20"
-                      viewBox="0 0 30 30"
+                      viewBox="0  0 30 30"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >

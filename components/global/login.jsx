@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
+import { useRouter } from "next/router"; // Importar useRouter
 
 export default function GlobalLogin({ block, dataBinding }) {
   const [email, setEmail] = useState("");
@@ -7,6 +8,8 @@ export default function GlobalLogin({ block, dataBinding }) {
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const [isRegistering, setIsRegistering] = useState(false); // Para alternar entre registro e inicio de sesión
+
+  const router = useRouter(); // Inicializar useRouter
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -19,6 +22,7 @@ export default function GlobalLogin({ block, dataBinding }) {
       setError(error.message);
     } else {
       setMessage("¡Inicio de sesión exitoso!");
+      router.push("/dashboard"); // Redirigir al dashboard
     }
   };
 
@@ -30,6 +34,7 @@ export default function GlobalLogin({ block, dataBinding }) {
       setError(error.message);
     } else {
       setMessage("¡Registro exitoso! Revisa tu correo para confirmar.");
+      router.push("/login"); // Redirigir a la página de inicio de sesión
     }
   };
   return (
