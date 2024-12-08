@@ -1,4 +1,3 @@
-import { writeFile } from "fs/promises";
 import DefaultLayout from "../../components/layouts/default";
 import Filer from "@cloudcannon/filer";
 import BlogList from "../../components/blog/list";
@@ -30,6 +29,7 @@ export async function getStaticProps({ params }) {
     sortKey: "date",
     pagination: { size: page.data?.pagination?.size || 9, page: 1 },
   });
+
 
   return {
     props: {
