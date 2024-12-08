@@ -60,16 +60,14 @@ export default function ContactHero({ block, dataBinding }) {
                       </Link>
                     </>
                   )}
-                  {user && block.form.user_email && (
-                    <>
-                      <div className="col-md-12">
-                        <label htmlFor="user-email" className="label">
-                          {block.form.user_email.heading}
-                        </label>
-                        <p>{user.email}</p>{" "}
-                        {/* Muestra el correo del usuario logueado */}
+                  {block.form.email && (
+                    <div className="col-md-12">
+                      <div htmlFor="email" className="label">
+                        {block.form.email.heading}
                       </div>
-                    </>
+                      <p className="form-control mb-6">{user ? user.email : ""}</p>
+                     
+                    </div>
                   )}
                 </div>
                 <div className="item">
