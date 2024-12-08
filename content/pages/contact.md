@@ -41,11 +41,4 @@ content_blocks:
         placeholder: Enter your message
       submit_button:
         text: Send message
-      user_email:
-        heading: Your Email
-        placeholder: Enter your email
-  - _bookshop_name: contact/supabase-email
-    heading: Supabase Email
-    description: Aquí se mostrará el correo desde Supabase.
-    email: { { supabase_email } }
 ---
