@@ -38,12 +38,15 @@ blueprint:
       placeholder: "Any Message"
     submit_button:
       text: "Send message"
+    user_email:
+      heading: "Your Email"
+      placeholder: "Enter your email"
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
-_inputs: 
+_inputs:
   fullname:
     options:
       preview:
@@ -64,3 +67,7 @@ _inputs:
     options:
       preview:
         icon: send
+  user_email:
+    options:
+      preview:
+        icon: email

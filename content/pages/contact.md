@@ -1,10 +1,10 @@
 ---
 title: Contact
 seo:
-  page_description: 
-  canonical_url: 
-  featured_image: 
-  author_twitter_handle: 
+  page_description:
+  canonical_url:
+  featured_image:
+  author_twitter_handle:
   open_graph_type:
   no_index: false
 content_blocks:
@@ -41,4 +41,11 @@ content_blocks:
         placeholder: Enter your message
       submit_button:
         text: Send message
+      user_email:
+        heading: Your Email
+        placeholder: Enter your email
+  - _bookshop_name: contact/supabase-email
+    heading: Supabase Email
+    description: Aquí se mostrará el correo desde Supabase.
+    email: { { supabase_email } }
 ---

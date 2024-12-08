@@ -22,7 +22,7 @@ export default function GlobalLogin({ block, dataBinding }) {
       setError(error.message);
     } else {
       setMessage("¡Inicio de sesión exitoso!");
-      router.push("/dashboard"); // Redirigir al dashboard
+      router.push("/contact"); // Redirigir al dashboard
     }
   };
 
